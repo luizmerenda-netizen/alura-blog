@@ -48,6 +48,32 @@
             padding: 15px;
             margin-top: 20px;
         }
+
+        /* Estilo dos botões */
+        .avaliacao {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .avaliacao button {
+            background-color: #222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .avaliacao button:hover {
+            background-color: #555;
+        }
+
+        .contador {
+            font-weight: bold;
+            margin-right: 20px;
+        }
     </style>
 </head>
 
@@ -94,11 +120,39 @@
             </p>
         </section>
 
+        <!-- Área de Likes e Dislikes -->
+        <section>
+            <h2>Avalie meu blog</h2>
+
+            <div class="avaliacao">
+                <button onclick="darLike()">👍 Like</button>
+                <span id="likes" class="contador">0</span>
+
+                <button onclick="darDislike()">👎 Dislike</button>
+                <span id="dislikes" class="contador">0</span>
+            </div>
+        </section>
+
     </main>
 
     <footer>
         <p>© 2026 - Blog de Luiz Otavio</p>
     </footer>
+
+    <script>
+        let likes = 0;
+        let dislikes = 0;
+
+        function darLike() {
+            likes++;
+            document.getElementById("likes").textContent = likes;
+        }
+
+        function darDislike() {
+            dislikes++;
+            document.getElementById("dislikes").textContent = dislikes;
+        }
+    </script>
 
 </body>
 </html>
